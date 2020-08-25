@@ -1,0 +1,22 @@
+<!-- form #loginForm = 'ngForm' (ngSubmit) = 'loginUser(loginForm)' -->
+<div class="login">
+    <div class="fields">
+        <div class = "login-with">
+            <a href = "https://www.facebook.com/"><p><mat-icon>facebook</mat-icon>Login with Facebook</p></a>
+        </div>
+        <div class = "login-with">
+            <a href = "https://www.apple.com/"><p><mat-icon>login</mat-icon>Login with Apple</p></a>
+        </div>
+        <p>or</p>
+
+<!-- <form> -->
+        <input type = 'text' [(ngModel)] = 'username' placeholder = "Username" name='username'>
+        <input type = 'password' [(ngModel)] = 'password' placeholder = "Password" name='password'>
+        <button class = "login-with" type = 'submit' (click) = 'loginSubmit()'>Login</button>
+        <p>By loggin in you agree to GIPHY's <span>Terms of Service</span></p>
+        <p>Don't have an account?<span>Join Giphy!</span></p>
+        <p><span>Forgot your password</span></p>
+
+
+</div>
+</div>

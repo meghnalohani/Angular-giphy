@@ -1,0 +1,34 @@
+.card-container{
+    display: flex;
+    flex-flow: row wrap;
+    background-color: black;
+    justify-content: space-around;
+    align-content: center;
+}
+.heading{
+    padding: 0.5em;
+    display: inline;
+}
+p{
+    margin: 0.4em 0.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.mat-icon{
+    color: green;
+    size: 100px;
+}
+.suffix-icon {
+    color: black;
+    /* background: palevioletred; */
+    font-size: 48px;
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    padding: 0;
+}
+.mat-form-field{
+    width: 95%;
+    margin: 1em;
+}

@@ -1,0 +1,10 @@
+<div class = 'heading'>
+
+<p><mat-icon>trending_up</mat-icon>Trending<p>
+</div>
+
+<div class = 'card-container' >
+    <div *ngFor = 'let giph of giphsArray'>
+    <app-card [giphCard] = 'giph'></app-card>
+</div>
+</div>

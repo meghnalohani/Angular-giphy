@@ -1,0 +1,11 @@
+<mat-card class="giph-card ">
+    <mat-card-header>
+      <mat-card-title>{{giphCard.title}}</mat-card-title>
+      <div class="header-actions">
+        <button (click) = 'addToFavorites()' mat-mini-fab aria-label="Example icon-button with a heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div>
+    </mat-card-header>
+    <img mat-card-image src = {{giphCard.images.original.url}} alt="A giphy">
+  </mat-card>

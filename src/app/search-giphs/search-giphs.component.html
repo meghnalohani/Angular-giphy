@@ -1,0 +1,19 @@
+<!-- <input matInput placeholder='Search a GIF' [(ngModel)]='searchKey'>
+<mat-icon (click)='searchGiphy(searchKey)' class="example-icon" aria-hidden="false"
+  aria-label="Example user verified icon">search</mat-icon> -->
+<mat-form-field appearance="outline">
+  <mat-label>Search Giphs</mat-label>
+    <input matInput placeholder="Search" [(ngModel)]='searchKey'>
+    <mat-icon class = 'suffix-icon' (click)='searchGiphy(searchKey)' matSuffix>search</mat-icon>
+    <mat-hint>Search your favorite giphs</mat-hint>
+  </mat-form-field>
+<div class='heading'>
+  <p>
+    <mat-icon>search</mat-icon>Search
+  <p>
+</div>
+<div class='card-container'>
+  <div *ngFor='let giph of giphsArray'>
+    <app-card [giphCard]='giph'></app-card>
+  </div>
+</div>
