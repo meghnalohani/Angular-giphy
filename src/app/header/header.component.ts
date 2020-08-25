@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GiphsService } from '../services/giphs.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { RouterService } from '../services/router.service';

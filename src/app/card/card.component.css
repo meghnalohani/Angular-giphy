@@ -1,14 +1,6 @@
 .giph-card {
     max-width: 300px;
     margin: 1em;
-    /* border-image: linear-gradient(red,blue);
-    border: 1px; */
-    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
   }
-  .border-gradient {
-    border: 10px solid;
-    border-image-slice: 1;
-    border-width: 5px;
-    width: auto;
-}
+  
   
