@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Giphy } from '../../models/giphy';
 import { GiphsService } from '../../services/giphs.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { RouterService } from 'src/app/services/router.service';
+
 
 
 @Component({
@@ -9,13 +12,15 @@ import { GiphsService } from '../../services/giphs.service';
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent implements OnInit {
-  
+
   giphsArray: Array<Giphy>;
   favoriteGiph: Giphy;
-  
-  constructor(private giphyService: GiphsService) {
+  currentUser: string;
+
+  constructor(private giphyService: GiphsService, private authenticationService: AuthenticationService,
+    private routerService: RouterService) {
     this.giphsArray = [];
-   }
+  }
 
   ngOnInit() {
     this.giphyService.getFavoriteGiphs();
@@ -28,6 +33,10 @@ export class FavoritesComponent implements OnInit {
         console.log(error.message);
       }
     );
+    this.currentUser = this.authenticationService.getUser();
   }
-
+  logoutUser() {
+    this.authenticationService.removeUser();
+    this.routerService.routeToLogin();
+  }
 }

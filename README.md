@@ -7,6 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 The project is a Single Page Application that uses the Gipher API. The project is organised into various modules which encapsulates a seperate functionality. 
 The user is redirected to Trending page, which displays the top 25 Trending giphs fetched from the Trending endpoint of the Gipher API. The user can search using a keyword and get top 25 most relevant Giphs. 
 A user needs to Login in order to view and modify the Favorites list. The favorites path is gaurded and only an authenticated user with a 'bearerToken' can login into the application.
+Use the following credentials to login to the application
+{username: 'meghna',password: 'pass'}
+{username: 'harshit',password: 'pass1'}
 
 App module is the main module which consists of the following 
 1. Card - Card Component is a dumb component and a child of Search Component, Trending Component and Favorites component.
@@ -25,12 +28,34 @@ Giphs Service - manages GET, POST request to Gipher API and local server
 Router Service - manages routing to other components 
 11. CanActivateRouteGuard - It guards favorites from unauthenticated access and prevents deep link access.
 
+## Project structure
+
+src -app -card
+         -dashboard
+         -favorites-favorites.component
+                   -favorites.module.ts
+         -footer
+         -header
+         -login-login.component
+               -login.module.ts
+         -models-giphy
+                -login-user
+         -search-giphs
+         -services-authentication.service
+                  -giphs.service
+                  -router.service
+         -trending-giphs
+         -can-activate-route-guard
+    -assets
+    -environments - environment.ts
+                
+
 ## Running the application
 
 1. run `npm install` to install various dependencies
 2. run `npm build`
 3. run `json-server --watch -server.json` to run the local server on Localhost:3000
-4. run `ng e2e` to execute end to end test cases.
+4. run `ng e2e` to execute end to end test cases. I have not written unit tests so running default tests will throw errors.
 5. run `ng serve` to run the application frontend on port 4200.
 6. use the credentials (meghna, pass) for login
 
@@ -57,5 +82,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
 
 

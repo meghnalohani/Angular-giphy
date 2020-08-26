@@ -4,6 +4,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Giphy } from '../models/giphy';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthenticationService } from './authentication.service';
 
 
 @Injectable({
@@ -14,12 +15,14 @@ export class GiphsService {
   trendingUrl: string;
   searchUrl: string;
   favoriteUrl: string;
+  favoriteUserUrl: string;
   apiKey: string;
   resource: string;
   endpoint: string;
   apiUrl: string;
   limit: number;
   rating: string;
+  currentUser: string;
   giph: Giphy;
   giphArray: Array<Giphy>;
   searchArray: Array<Giphy>;
@@ -29,7 +32,7 @@ export class GiphsService {
   public favoriteSubject: BehaviorSubject<Array<Giphy>>;
 
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private authenticationservice: AuthenticationService) {
     this.apiUrl = 'https://api.giphy.com/v1';
     // this.giph = new Giphy();
     this.giphArray = [];
@@ -41,7 +44,8 @@ export class GiphsService {
     this.favoriteSubject = new BehaviorSubject(this.favoriteArray);
     this.trendingUrl = 'https://api.giphy.com/v1/gifs/trending?api_key=' + this.apiKey + '&limit=25&rating=g';
     this.searchUrl = 'https://api.giphy.com/v1/gifs/search?api_key=SybjqnSqP6yUH7CjIe2nUAZgtObkUfxJ&limit=25&offset=0&rating=g&lang=en';
-    this.favoriteUrl = 'http://localhost:3000/favorites';
+    this.favoriteUrl = 'http://localhost:3000';
+    this.favoriteUserUrl = '';
   }
 
   getTrendingGiphs() {
@@ -72,7 +76,9 @@ export class GiphsService {
 
   addGiphToFavorite(favoriteGiph) {
     console.log(favoriteGiph);
-    this.httpClient.post(this.favoriteUrl, favoriteGiph).subscribe(
+    this.currentUser = localStorage.getItem('user');
+    this.favoriteUserUrl = this.favoriteUrl + '/' + this.currentUser;
+    this.httpClient.post(this.favoriteUserUrl, favoriteGiph).subscribe(
       data => {
         this.favoriteArray.push(favoriteGiph);
         this.favoriteSubject.next(this.favoriteArray);
@@ -87,7 +93,9 @@ export class GiphsService {
   }
 
   getFavoriteGiphs() {
-    this.httpClient.get<Array<Giphy>>(this.favoriteUrl)
+    this.currentUser = localStorage.getItem('user');
+    this.favoriteUserUrl = this.favoriteUrl + '/' + this.currentUser;
+    this.httpClient.get<Array<Giphy>>(this.favoriteUserUrl)
       .subscribe(
         data => {
           this.favoriteArray = data;

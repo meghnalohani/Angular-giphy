@@ -25,39 +25,23 @@ export class AuthenticationService {
     ];
   }
 
-  getUsers() {
-    // this.httpClient.get<Array<LoginUser>>(this.authUrl).subscribe(
-    //   data => {
-    //     console.log(data);
-    //     this.users = data;
-    //     console.log(this.users);
-    //   }
-    // );
-  }
   authenticateUser(data) {
     let token;
-    // this.httpClient.get<Array<LoginUser>>(this.authUrl).subscribe(
-    //   userdata => {
-    //     this.users = userdata;
-    //     const foundUser = this.users.find(u => u.username === data.username
-    //       && u.password === data.password);
-    //     if (foundUser) {
-    //       console.log('user found');
-    //       token = Math.random().toString(36).substring(2, 15)
-    //         + Math.random().toString(36).substring(2, 15);
-    //     }
-    //     console.log(token);
-    //     return of(token);
-    //   }
-   // );
     const foundUser = this.users.find(u => u.username === data.username
       && u.password === data.password);
     if (foundUser) {
-      console.log('user found');
+      localStorage.setItem('user', data.username);
       token = Math.random().toString(36).substring(2, 15)
         + Math.random().toString(36).substring(2, 15);
     }
     return token;
+  }
+  getUser() {
+    return localStorage.getItem('user');
+  }
+  removeUser() {
+    localStorage.removeItem('user');
+    localStorage.removeItem('bearerToken');
   }
 
 setBearerToken(token) {

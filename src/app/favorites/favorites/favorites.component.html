@@ -1,6 +1,10 @@
 <div class = 'heading'>
 
     <p><mat-icon>favorite</mat-icon>Favorites<p>
+        <div class = 'user-div'>
+        <p>Hello, {{currentUser}}</p>
+        <button mat-button-raised (click) = 'logoutUser()'>Login with a different account</button>
+    </div>
     </div>
     
 <div class = 'card-container' >
