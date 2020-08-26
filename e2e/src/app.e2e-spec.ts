@@ -1,9 +1,9 @@
 import { AppPage } from './app.po';
-import { browser, logging, element, by } from 'protractor';
+import { browser, logging } from 'protractor';
 
 describe('Angular Gipher aap', () => {
   let page: AppPage;
-  var originalTimeout;
+  let originalTimeout;
 
 
   beforeEach(() => {
@@ -51,7 +51,6 @@ describe('Angular Gipher aap', () => {
   it('footer should contain a form', () => {
     expect(page.getFooterLinks()).toBeTruthy();
   });
-  
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
@@ -62,3 +61,6 @@ describe('Angular Gipher aap', () => {
     } as logging.Entry));
   });
 });
+
+
+

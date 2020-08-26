@@ -30,4 +30,5 @@ export class SearchGiphsComponent implements OnInit {
         console.log(error.message);
       }
     );
-  } }
+  }
+}

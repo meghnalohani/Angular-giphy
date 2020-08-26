@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Giphy } from '../models/giphy';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthenticationService } from './authentication.service';
 
@@ -43,7 +43,7 @@ export class GiphsService {
     this.trendingSubject = new BehaviorSubject(this.giphArray);
     this.favoriteSubject = new BehaviorSubject(this.favoriteArray);
     this.trendingUrl = 'https://api.giphy.com/v1/gifs/trending?api_key=' + this.apiKey + '&limit=25&rating=g';
-    this.searchUrl = 'https://api.giphy.com/v1/gifs/search?api_key=SybjqnSqP6yUH7CjIe2nUAZgtObkUfxJ&limit=25&offset=0&rating=g&lang=en';
+    this.searchUrl = 'https://api.giphy.com/v1/gifs/search?api_key=' + this.apiKey + '&limit=25&offset=0&rating=g&lang=en';
     this.favoriteUrl = 'http://localhost:3000';
     this.favoriteUserUrl = '';
   }
@@ -54,24 +54,24 @@ export class GiphsService {
     this.rating = 'g';
     return this.httpClient.get(this.trendingUrl)
       .pipe(map(response => response['data']));
-
   }
 
   getSearchedGiphs(searchItem: string) {
     this.searchArray = [];
     this.searchSubject = new BehaviorSubject(this.searchArray);
-    console.log('inside service ', searchItem);
     this.searchUrl = this.searchUrl + '&q=' + searchItem;
+    console.log(searchItem);
+    console.log(this.searchUrl);
     this.httpClient.get(this.searchUrl)
       .pipe(map(response => response['data']))
       .subscribe(
         data => {
           this.searchArray = data;
+          console.log(this.searchArray);
           this.searchSubject.next(this.searchArray);
           console.log('Subject value', this.searchSubject);
         }
       );
-    console.log('inside search subject');
   }
 
   addGiphToFavorite(favoriteGiph) {
@@ -88,8 +88,6 @@ export class GiphsService {
         console.log('Duplicate favorites not allowed');
       }
     );
-    // this.getFavoriteGiphs();
-
   }
 
   getFavoriteGiphs() {
