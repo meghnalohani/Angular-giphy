@@ -2,12 +2,13 @@
     background-color: black;
     /* background-image: url('../../assets/bg2.jpg'); */
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-around;
     padding: 1em 0;
     /* position: absolute;
     bottom: 0; */
     width: 100%;
+    margin-top: auto;
     
     
   }
@@ -54,5 +55,13 @@ button {
     font-size: 3em;
     margin: 0 auto;
     color: white;
+}
+@media screen and (max-width:576px) {
+  .social-media{
+    width: 90%;
+  }
+  .subscribe{
+    width: 90%;
+  }
 }
 

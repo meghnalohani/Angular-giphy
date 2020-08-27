@@ -58,11 +58,8 @@ export class GiphsService {
 
   getSearchedGiphs(searchItem: string) {
     this.searchArray = [];
-    this.searchSubject = new BehaviorSubject(this.searchArray);
-    this.searchUrl = this.searchUrl + '&q=' + searchItem;
     console.log(searchItem);
-    console.log(this.searchUrl);
-    this.httpClient.get(this.searchUrl)
+    this.httpClient.get(this.searchUrl + '&q=' + searchItem)
       .pipe(map(response => response['data']))
       .subscribe(
         data => {
@@ -72,6 +69,7 @@ export class GiphsService {
           console.log('Subject value', this.searchSubject);
         }
       );
+    return this.searchSubject;
   }
 
   addGiphToFavorite(favoriteGiph) {
@@ -81,6 +79,23 @@ export class GiphsService {
     this.httpClient.post(this.favoriteUserUrl, favoriteGiph).subscribe(
       data => {
         this.favoriteArray.push(favoriteGiph);
+        this.favoriteSubject.next(this.favoriteArray);
+        console.log(this.favoriteArray);
+      },
+      error => {
+        console.log('Duplicate favorites not allowed');
+      }
+    );
+  }
+
+  removeGiphFromFavorite(id) {
+    console.log(id);
+    this.currentUser = localStorage.getItem('user');
+    this.favoriteUserUrl = this.favoriteUrl + '/' + this.currentUser;
+    this.httpClient.delete(this.favoriteUserUrl + '/' + id).subscribe(
+      data => {
+        let deletedGiph = this.favoriteArray.find(f => f.id === id);
+        this.favoriteArray = this.favoriteArray.filter(obj => obj !== deletedGiph);
         this.favoriteSubject.next(this.favoriteArray);
         console.log(this.favoriteArray);
       },

@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
 import { FavoritesComponent } from './favorites/favorites/favorites.component';
 import {MatButtonModule} from '@angular/material/button'
+import { FavCardComponent } from './favorites/fav-card/fav-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatButtonModule} from '@angular/material/button'
     CardComponent,
     SearchGiphsComponent,
     LoginComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    FavCardComponent
   ],
   imports: [
     HttpClientModule,

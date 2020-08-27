@@ -1,6 +1,7 @@
 <!-- <input matInput placeholder='Search a GIF' [(ngModel)]='searchKey'>
 <mat-icon (click)='searchGiphy(searchKey)' class="example-icon" aria-hidden="false"
   aria-label="Example user verified icon">search</mat-icon> -->
+  <div class = 'search-component'>
 <mat-form-field appearance="outline">
   <mat-label>Search Giphs</mat-label>
     <input matInput placeholder="Search" [(ngModel)]='searchKey'>
@@ -19,4 +20,5 @@
   <div *ngFor='let giph of giphsArray'>
     <app-card [giphCard]='giph'></app-card>
   </div>
+</div>
 </div>

@@ -3,15 +3,13 @@
     <p><mat-icon>favorite</mat-icon>Favorites<p>
         <div class = 'user-div'>
         <p>Hello, {{currentUser}}</p>
-        <button mat-button-raised (click) = 'logoutUser()'>Login with a different account</button>
-    </div>
+</div>
     <p>GIPHY is your top source for the best & newest GIFs & Animated Stickers online. 
         Find your favorite funny GIFs, reaction GIFs, unique GIFs and more.</p>
         <p>Is your favorite list empty? Head on to add some.</p>
-    </div>
+    
     
 <div class = 'card-container' >
     <div *ngFor = 'let giph of giphsArray'>
-    <app-card [giphCard] = 'giph'></app-card>
-</div>
+    <app-fav-card [giphCard] = 'giph'></app-fav-card>
 </div>

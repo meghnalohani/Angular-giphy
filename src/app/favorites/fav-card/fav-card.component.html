@@ -3,8 +3,8 @@
       <mat-card-title>{{giphCard.title}}</mat-card-title>
       <mat-card-subtitle>{{giphCard.id}}</mat-card-subtitle>
       <div class="header-actions">
-        <button (click) = 'addToFavorites()' mat-mini-fab aria-label="Example icon-button with a heart icon">
-          <mat-icon>favorite</mat-icon>
+        <button (click) = 'removeFromFavorites(giphCard.id)' mat-mini-fab aria-label="Example icon-button with a heart icon">
+          <mat-icon>delete</mat-icon>
         </button>
       </div>
     </mat-card-header>

@@ -35,8 +35,4 @@ export class FavoritesComponent implements OnInit {
     );
     this.currentUser = this.authenticationService.getUser();
   }
-  logoutUser() {
-    this.authenticationService.removeUser();
-    this.routerService.routeToLogin();
-  }
 }

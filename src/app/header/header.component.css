@@ -1,7 +1,4 @@
-/* .mat-toolbar{
-  position: fixed;
-  z-index: 1;
-} */
+
 .header-icon {
     padding: 0 14px;
   }
@@ -12,16 +9,15 @@
   img{
     height: 3em;
   }
-  .mat-toolbar {
-    background-color: black;
-  }
   span{
     font-weight: bold;
   }
   .toolbar-class {
     display: flex;
-    direction: row;
+    flex-flow: row wrap;
     justify-content: space-between;
+    background-color: black;
+    height: fit-content;
   }
   a{
     color: white;
@@ -30,14 +26,14 @@
   button{
     background-color: #0056be;
     color: white;
-    padding: 0.25em 2em;
+    padding: 0.25em 0/25em;
   }
   .mat-icon{
     color:white;
     padding: 0.25em;
   }
   .header-link{
-    padding: 0.25em 2em;;
+    padding: 0.25em 0.25em;
     border: 1 px solid black;
   }
   .header-link:hover{

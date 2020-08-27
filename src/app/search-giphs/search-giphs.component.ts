@@ -20,8 +20,8 @@ export class SearchGiphsComponent implements OnInit {
   }
   searchGiphy(searchValue) {
     console.log(searchValue);
-    this.giphsService.getSearchedGiphs(searchValue);
-    this.giphsService.searchSubject.subscribe(
+    // this.giphsService.getSearchedGiphs(searchValue);
+    this.giphsService.getSearchedGiphs(searchValue).subscribe(
       data => {
         console.log(data);
         this.giphsArray = data;

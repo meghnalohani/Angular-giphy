@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GiphsService } from '../services/giphs.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { RouterService } from '../services/router.service';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -10,8 +11,12 @@ import { RouterService } from '../services/router.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  // action: string;
+  // actionSubject: BehaviorSubject<string>;
   constructor(private giphsService: GiphsService,
     private authenticationService: AuthenticationService, private routerService: RouterService) {
+      // this.actionSubject = new BehaviorSubject(this.action);
+      
   }
 
   ngOnInit() {
@@ -23,6 +28,12 @@ export class HeaderComponent implements OnInit {
       this.routerService.routeToLogin();
     }
   }
-  
+  loginUser() {
+    this.routerService.routeToLogin();
+  }
+  logoutUser() {
+    this.authenticationService.removeUser();
+    this.routerService.routeToLogin();
+  }
 
 }

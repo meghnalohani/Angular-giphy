@@ -1,3 +1,6 @@
+search-component{
+    min-height: 100%;
+}
 .card-container{
     display: flex;
     flex-flow: row wrap;

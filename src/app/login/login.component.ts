@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       this.routerService.routeToFavorites();
     } else {
       //route to register page
+      alert('Incorrect username or password');
       this.routerService.routeToLogin();
     }
 

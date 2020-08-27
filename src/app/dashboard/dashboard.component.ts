@@ -10,6 +10,12 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    // this.route.navigateByUrl('/', {skipLocationChange: true}).then(
+    //   () => {
+    //     this.route.navigate(['dashboard', 'stockdetail', stockname]);
+    //   }
+    // );
   }
 
 }
