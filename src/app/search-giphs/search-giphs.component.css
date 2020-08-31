@@ -1,12 +1,17 @@
-search-component{
-    height: 100%;
+.search-component{
+    min-height: 60vh;
+}
+h5{
+    padding:1em;
 }
 .card-container{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     background-color: black;
-    justify-content: space-around;
+    justify-content: center;
     align-content: center;
+    max-height: 600vh;
+    overflow: hidden;
 }
 .heading{
     padding: 0.5em;
@@ -34,4 +39,18 @@ p{
 .mat-form-field{
     width: 95%;
     margin: 1em;
+}
+
+@media screen and (max-width:776px){
+    .card-container{
+        max-height: 600vh;
+    }
+}
+@media screen and (max-width:576px){
+    .card-container{
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+        height: fit-content;
+    }
 }

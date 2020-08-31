@@ -6,12 +6,17 @@ import { FavoritesComponent } from './favorites/favorites/favorites.component';
 import { CanActivateRouteGuard } from './can-activate-route.guard';
 import { SearchGiphsComponent } from './search-giphs/search-giphs.component';
 import { TrendingGiphsComponent } from './trending-giphs/trending-giphs.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'dashboard',

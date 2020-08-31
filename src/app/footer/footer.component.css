@@ -1,5 +1,5 @@
 .footer{
-    background-color: black;
+    background-color: rgb(32,32,32);
     /* background-image: url('../../assets/bg2.jpg'); */
     display: flex;
     flex-flow: row wrap;

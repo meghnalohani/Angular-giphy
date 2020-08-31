@@ -1,9 +1,20 @@
+.favorite-component{
+    min-height: 60vh;
+}
+span{
+    color: turquoise;
+}
+h5{
+    padding:1em;
+}
 .card-container{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     background-color: black;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-content: center;
+    max-height: 100vh;
+    overflow: hidden;
 }
 .heading{
     padding: 0.5em;
@@ -29,4 +40,17 @@ button {
     font-weight: 400;
     padding: 0.25em;
     margin: 0 0.25em;
+}
+@media screen and (max-width:776px){
+    .card-container{
+        max-height: 600vh;
+    }
+}
+@media screen and (max-width:576px){
+    .card-container{
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+        height: fit-content;
+    }
 }

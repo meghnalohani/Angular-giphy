@@ -18,6 +18,17 @@
     justify-content: space-between;
     background-color: black;
     height: fit-content;
+
+    /* position: absolute; */
+    position: sticky;
+    position: -webkit-sticky; 
+    top: 0; 
+    z-index: 5; 
+
+    /* position: fixed; */
+    left: 0;
+    z-index: 2;
+    width: 100%  !important;
   }
   a{
     color: white;
@@ -30,14 +41,32 @@
   }
   .mat-icon{
     color:white;
-    padding: 0.25em;
+    /* padding: 0.25em; */
+    align-self: center;
   }
   .header-link{
     padding: 0.25em 0.25em;
     border: 1 px solid black;
   }
   .header-link:hover{
-    transition: ease-in-out;
+    transition: 0.3s ease-in-out;
     border: 1px solid white;
   }
+  .menu{
+   padding: 0px; 
+  }
+  .mat-menu-item{
+    background-color: black;
+  }
+  .mat-menu-item:hover{
+    color: black;
+    background-color: white;
+  }
+ 
+:host /deep/ .mat-menu-content {
+  padding: 0!important;
+}
+  
+  
+  
   

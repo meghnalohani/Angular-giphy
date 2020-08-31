@@ -11,8 +11,9 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  // action: string;
-  // actionSubject: BehaviorSubject<string>;
+
+  currentUser: string;
+  
   constructor(private giphsService: GiphsService,
     private authenticationService: AuthenticationService, private routerService: RouterService) {
       // this.actionSubject = new BehaviorSubject(this.action);
@@ -20,6 +21,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    // if (this.authenticationService.isUserAuthenticated()) {
+    //   this.currentUser = localStorage.getItem('user');
+    // } else {
+    //   this.currentUser = 'New User';
+    // }
   }
   goToFavorites() {
     if (this.authenticationService.isUserAuthenticated()) {
@@ -32,8 +38,12 @@ export class HeaderComponent implements OnInit {
     this.routerService.routeToLogin();
   }
   logoutUser() {
+    // this.authenticationService.headerSubject.next('New user');
     this.authenticationService.removeUser();
     this.routerService.routeToLogin();
+  }
+  registerUser() {
+    this.routerService.routeToRegister();
   }
 
 }

@@ -1,27 +1,34 @@
 <mat-toolbar class='toolbar-class'>
       <a routerLink="/" class='icon'>
-            <img src='../../assets/giphylogo2.PNG' alt = "logo of the website">
+            <img src='../../assets/giphylogo2.PNG' alt="logo of the website">
       </a>
 
       <div class="header-link">
-      <a routerLink="favorites">Favorites</a>
-      <mat-icon>favorite</mat-icon>
+            <a routerLink="favorites">Favorites</a>
+            <mat-icon class='comp-icon'>favorite</mat-icon>
       </div>
 
       <div class='header-link'>
-      <a routerLink="trending">Trending</a>
-      <mat-icon>trending_up</mat-icon>
+            <a routerLink="trending">Trending</a>
+            <mat-icon>trending_up</mat-icon>
       </div>
 
       <div class='header-link'>
-      <a routerLink="search">Search</a>
-      <mat-icon>search</mat-icon>
+            <a routerLink="search">Search</a>
+            <mat-icon>search</mat-icon>
       </div>
-      
-      <!-- <div class = 'header-link'>
-      <button routerLink="login">Login</button>
-      </div> -->
-      <button mat-button-raised (click) = 'loginUser()'>Login</button>
 
-      <button mat-button-raised (click) = 'logoutUser()'>Logout</button>
+      <button mat-button [matMenuTriggerFor]="menu">More
+        <!-- <mat-icon>more_vert</mat-icon> -->
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu class='menu' #menu="matMenu">
+            <button mat-menu-item (click)='loginUser()'>Login</button>
+            <button mat-menu-item (click)='logoutUser()'>Logout</button>
+            <button mat-menu-item (click)='registerUser()'>Register</button>
+            <button mat-menu-item >Help</button>
+      </mat-menu>
+      <!-- <button mat-button-raised (click)='loginUser()'>Login</button>
+
+      <button mat-button-raised (click)='logoutUser()'>Logout</button> -->
 </mat-toolbar>

@@ -22,6 +22,9 @@ import { LoginComponent } from './login/login.component';
 import { FavoritesComponent } from './favorites/favorites/favorites.component';
 import {MatButtonModule} from '@angular/material/button'
 import { FavCardComponent } from './favorites/fav-card/fav-card.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { RegisterComponent } from './register/register.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { FavCardComponent } from './favorites/fav-card/fav-card.component';
     SearchGiphsComponent,
     LoginComponent,
     FavoritesComponent,
-    FavCardComponent
+    FavCardComponent,
+    RegisterComponent,
+
   ],
   imports: [
     HttpClientModule,
@@ -42,13 +47,14 @@ import { FavCardComponent } from './favorites/fav-card/fav-card.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    // HttpClient,
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
     MatCardModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

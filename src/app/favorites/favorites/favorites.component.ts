@@ -35,4 +35,7 @@ export class FavoritesComponent implements OnInit {
     );
     this.currentUser = this.authenticationService.getUser();
   }
+  goToTrending() {
+    this.routerService.routeToTrending();
+  }
 }

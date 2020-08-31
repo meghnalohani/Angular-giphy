@@ -1,0 +1,39 @@
+<!-- form #loginForm = 'ngForm' (ngSubmit) = 'loginUser(loginForm)' -->
+<div class="login">
+    <div class="fields">
+        <div class = "login-with">
+            <a href = "https://www.facebook.com/"><p><mat-icon>facebook</mat-icon>Register with Facebook</p></a>
+        </div>
+        <p>or</p>
+
+<!-- <form> -->
+        <input type = 'text' placeholder = "Email" name='email' [formControl]="email"
+        [class.error-border] = 'email.touched && email.invalid'>
+        <div class="error" *ngIf="email.errors && (email.dirty || email.touched)">
+            <small class = 'err-message' *ngIf="email.errors.required">Email is required</small>
+            <!-- <small class = 'err-message' *ngIf="email.errors.pattern">Invalid email</small> -->
+
+        </div>
+
+        <input type = 'text' placeholder = "Username" name='username' [formControl]='username'
+        [class.error-border] = 'username.touched && username.invalid'>
+        <div class="error"*ngIf="username.errors && (username.dirty || username.touched)">
+            <small class = 'err-message' *ngIf="username.errors.required">Username is required</small>
+        </div>
+
+
+
+        <input type = 'password'  placeholder = "Password" name='password' [formControl]='password'
+        [class.error-border] = 'password.touched && password.invalid'>
+        <div class="error"*ngIf="password.errors && (password.dirty || password.touched)">
+            <small class = 'err-message' *ngIf="password.errors.required">Password is required</small>
+            <small class = 'err-message' *ngIf="password.errors.minlength">Should be atleast 8 characters</small>
+            <small class = 'err-message' *ngIf="password.errors.maxlength">Should be atmost 13 characters</small>
+        </div> 
+
+        <button class = "login-with" type = 'submit' (click) = 'register()'>Sign up</button>
+        <p>By loggin in you agree to GIPHY's <span style="cursor: pointer;">Terms of Service</span></p>
+        <p>Already have an account?<span (click)='login()' style="cursor: pointer;">Log in</span></p>
+</div>
+</div>
+

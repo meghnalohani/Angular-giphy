@@ -1,5 +1,6 @@
-<!-- form #loginForm = 'ngForm' (ngSubmit) = 'loginUser(loginForm)' -->
+
 <div class="login">
+    
     <div class="fields">
         <div class = "login-with">
             <a href = "https://www.facebook.com/"><p><mat-icon>facebook</mat-icon>Login with Facebook</p></a>
@@ -13,10 +14,11 @@
         <input type = 'text' [(ngModel)] = 'username' placeholder = "Username" name='username'>
         <input type = 'password' [(ngModel)] = 'password' placeholder = "Password" name='password'>
         <button class = "login-with" type = 'submit' (click) = 'loginSubmit()'>Login</button>
-        <p>By loggin in you agree to GIPHY's <span>Terms of Service</span></p>
-        <p>Don't have an account?<span>Join Giphy!</span></p>
+        <small class='err-message'>{{errorMessage}}</small>
+        <p>By loggin in you agree to GIPHY's <span style="cursor: pointer;"> Terms of Service </span></p>
+        <p>Don't have an account?<span (click)='registerUser()' style="cursor: pointer;">Join Giphy!</span></p>
         <p><span>Forgot your password</span></p>
 
 
 </div>
-</div>
+

@@ -1,0 +1,7 @@
+
+4. trending, add trending stickers also, artists and maybe videos
+5. search page -> add option to search sticker 
+add dialog box 
+add form validation
+fix register page
+compress gif

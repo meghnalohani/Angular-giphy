@@ -1,13 +1,41 @@
 .card-container{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     background-color: black;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-content: center;
+    max-height: 500vh;
+    overflow: hidden;
 }
 .heading{
     padding: 0.5em;
     display: inline;
+}
+.services {
+    background: black;
+    display: flex;
+    flex-flow: row-wrap;
+    margin-top:1em;
+    justify-content: space-around;
+    align-content: center;   
+}
+
+
+/* .virtual-bg{
+    display:flex;
+    flex-flow: column wrap;
+    /* height:20%; */
+    /* background-image: url('https://giphy.com/static/img/zoomies.gif'); */
+    /* background-repeat:no-repeat;
+    background-size: cover;
+    align-content: center;
+} */ 
+img{
+    height: 30vh;
+}
+h5{
+    padding:1em 0 0 0;
+    align-content: center;
 }
 p{
     margin: 0.4em 0.5em;
@@ -17,4 +45,17 @@ p{
 .mat-icon{
     color: blue;
     size: 100px;
+}
+@media screen and (max-width:776px){
+    .card-container{
+        max-height: 600vh;
+    }
+}
+@media screen and (max-width:576px){
+    .card-container{
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+        height: fit-content;
+    }
 }

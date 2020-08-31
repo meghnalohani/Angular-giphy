@@ -5,7 +5,7 @@
 <mat-form-field appearance="outline">
   <mat-label>Search Giphs</mat-label>
     <input matInput placeholder="Search" [(ngModel)]='searchKey'>
-    <mat-icon class = 'suffix-icon' (click)='searchGiphy(searchKey)' matSuffix>search</mat-icon>
+    <mat-icon class = 'suffix-icon' (click)='searchGiphy(searchKey)' style="cursor: pointer;" matSuffix>search</mat-icon>
     <mat-hint>Search your favorite giphs</mat-hint>
   </mat-form-field>
 <div class='heading'>
@@ -13,8 +13,8 @@
     <mat-icon>search</mat-icon>Search
   <p>
     <!-- <p>Your searched GIFs will appear here</p> -->
-    <p>GIPHY is your top source for the best & newest GIFs & Animated Stickers online. 
-      Find everything from funny GIFs, reaction GIFs, unique GIFs and more.</p>
+    <h5>GIPHY is your top source for the best & newest GIFs & Animated Stickers online. 
+      Find everything from funny GIFs, reaction GIFs, unique GIFs and more.</h5>
 </div>
 <div class='card-container'>
   <div *ngFor='let giph of giphsArray'>

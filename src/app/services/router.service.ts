@@ -12,6 +12,9 @@ export class RouterService {
   routeToLogin() {
     this.router.navigate(['login']);
     }
+    routeToRegister() {
+      this.router.navigate(['register']);
+      }
 
   routeToDashboard() {
     this.router.navigate(['dashboard']);
