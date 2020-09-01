@@ -4,7 +4,7 @@
     background-color: black;
     justify-content: flex-start;
     align-content: center;
-    max-height: 500vh;
+    max-height: 450vh;
     overflow: hidden;
 }
 .heading{
@@ -20,16 +20,6 @@
     align-content: center;   
 }
 
-
-/* .virtual-bg{
-    display:flex;
-    flex-flow: column wrap;
-    /* height:20%; */
-    /* background-image: url('https://giphy.com/static/img/zoomies.gif'); */
-    /* background-repeat:no-repeat;
-    background-size: cover;
-    align-content: center;
-} */ 
 img{
     height: 30vh;
 }

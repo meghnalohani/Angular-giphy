@@ -43,7 +43,7 @@ button {
 }
 @media screen and (max-width:776px){
     .card-container{
-        max-height: 600vh;
+        max-height: 500vh;
     }
 }
 @media screen and (max-width:576px){
